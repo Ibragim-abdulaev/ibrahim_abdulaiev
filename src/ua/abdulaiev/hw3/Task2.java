@@ -9,15 +9,15 @@ public class Task2 {
         String line = in.nextLine();
         line = removeSpace(line);
         System.out.println("Line without space: " + line);
-        System.out.println("Reverse line: " + ReverseString(line));
-        System.out.println("isPalindrome: " + isPalindrome(line, ReverseString(line)));
+        System.out.println("Reverse line: " + reverseString(line));
+        System.out.println("isPalindrome: " + isPalindrome(line, reverseString(line)));
     }
 
     public static String removeSpace(String line) {
         return  line.replaceAll("\\s", "");
     }
 
-    public static String ReverseString(String line) {
+    public static String reverseString(String line) {
         String reverse = new StringBuffer(line).reverse().toString();
         return reverse;
     }
