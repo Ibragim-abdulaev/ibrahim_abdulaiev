@@ -9,7 +9,7 @@ public class Task3 {
         //int[] copiedArray = {1,2,3,4,5,6,7,8,9,10,11,12};
         int[] copiedArray = Arrays.copyOf(initialArray, initialArray.length);
         System.out.println(Arrays.toString(copiedArray));
-        System.out.println(compositeNumber(copiedArray));
+        System.out.println("Number of composite: " + compositeNumber(copiedArray));
     }
 
     public static int[] fillArray(int[] array) {
