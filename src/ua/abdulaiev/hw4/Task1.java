@@ -8,8 +8,8 @@ public class Task1 {
         fillArray(initialArray);
         int[] copiedArray = Arrays.copyOf(initialArray, initialArray.length);
         System.out.println(Arrays.toString(copiedArray));
-        System.out.println(arithmeticMean(copiedArray));
-        System.out.println(geometricMean(copiedArray));
+        System.out.println("Arithmetic mean: " + arithmeticMean(copiedArray));
+        System.out.println("Geometric mean: " + geometricMean(copiedArray));
     }
 
     public static int[] fillArray(int[] array) {
