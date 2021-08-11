@@ -9,7 +9,7 @@ public class Task2 {
         //int[] copiedArray = {0,1,2,3,4,5,6,7,8,9,10,11};
         int[] copiedArray = Arrays.copyOf(initialArray, initialArray.length);
         System.out.println(Arrays.toString(copiedArray));
-        System.out.println(primeNumber(copiedArray));
+        System.out.println("Number of primes: " + primeNumber(copiedArray));
     }
 
     public static int[] fillArray(int[] array) {
