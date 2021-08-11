@@ -8,7 +8,6 @@ public class Task3 {
         Scanner in = new Scanner(System.in);
         System.out.print("Write a line: ");
         String line = in.nextLine();
-
         System.out.println("Number of words in line: " + wordCount(line));
     }
 
