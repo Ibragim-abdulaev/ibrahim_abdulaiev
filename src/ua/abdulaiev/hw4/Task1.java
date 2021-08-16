@@ -33,7 +33,7 @@ public class Task1 {
 
     public static double geometricMean(int[] array) {
         double average = 0;
-        double sum = 0;
+        double sum = 1.0;
         if (array.length > 0) {
             for (int i = 0; i < array.length; i++) {
                 sum += array[i];

@@ -9,7 +9,7 @@ public class Task4 {
         //int[] copiedArray = {1,2,3,4,5,6,7,8,9,10,11,12,120,121};
         int[] copiedArray = Arrays.copyOf(initialArray, initialArray.length);
         System.out.println(Arrays.toString(copiedArray));
-        System.out.println(Arrays.toString(replacingNumbersWithZeros(copiedArray)));
+        System.out.println("Replaced array with zero: " + Arrays.toString(replacingNumbersWithZeros(copiedArray)));
     }
 
     public static int[] fillArray(int[] array) {
