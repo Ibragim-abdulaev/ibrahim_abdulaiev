@@ -28,6 +28,7 @@ public class Task2 {
     private static boolean isRightMuve(char letCurrPos, int numCurrPos, char letNewPos, int numNewPos) {
         return (!isRightPositionOnBoard(letCurrPos, numCurrPos) ||
                 !isRightPositionOnBoard(letNewPos, numNewPos)) &&
-                Math.abs(letCurrPos - letNewPos) + Math.abs(numCurrPos - numNewPos) == 3;
+                Math.abs(letCurrPos - letNewPos) + Math.abs(numCurrPos - numNewPos) == 3 &&
+                Math.abs(letCurrPos - letNewPos) < 3 && Math.abs(numCurrPos - numNewPos) < 3;
     }
 }
