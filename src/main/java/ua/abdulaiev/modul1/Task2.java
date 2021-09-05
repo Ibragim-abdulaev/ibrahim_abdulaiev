@@ -21,11 +21,11 @@ public class Task2 {
             muve = inputUser.next();
         }
     }
-    private static boolean isRightPositionOnBoard(char letter, int num) {
+    public static boolean isRightPositionOnBoard(char letter, int num) {
         return (letter < 'a' || letter > 'h') || (num < 1 || num > 8);
     }
 
-    private static boolean isRightMuve(char letCurrPos, int numCurrPos, char letNewPos, int numNewPos) {
+    public static boolean isRightMuve(char letCurrPos, int numCurrPos, char letNewPos, int numNewPos) {
         return (!isRightPositionOnBoard(letCurrPos, numCurrPos) ||
                 !isRightPositionOnBoard(letNewPos, numNewPos)) &&
                 Math.abs(letCurrPos - letNewPos) + Math.abs(numCurrPos - numNewPos) == 3 &&
