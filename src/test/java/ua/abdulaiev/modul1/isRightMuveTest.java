@@ -41,7 +41,6 @@ public class isRightMuveTest {
     @Test
     void moveHorseWithExceptionsBecauseOnePointIsEmpty() {
         assertThrows(StringIndexOutOfBoundsException.class, () -> Task2.run("b2-2"));
-        //assertThrows(StringIndexOutOfBoundsException.class, () -> Task2.run("test"));
     }
 
     @Test
