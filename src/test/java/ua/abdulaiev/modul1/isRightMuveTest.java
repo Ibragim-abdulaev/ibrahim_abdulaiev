@@ -1,10 +1,9 @@
 package ua.abdulaiev.modul1;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.fail;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class isRightMuveTest {
 
@@ -36,20 +35,13 @@ public class isRightMuveTest {
 
     @Test
     void moveHorseZeroPoint() {
-        try{
-            Task2.isRightMuve(' ',0, ' ', 0);
-            fail("Exception Expected!");
-        }
-        catch(StringIndexOutOfBoundsException e){
-            assertTrue(true);
-        }
-        try{
-            Task2.isRightMuve('d',4, ' ', 7);
-            fail("Exception Expected!");
-        }
-        catch(StringIndexOutOfBoundsException e){
-            assertTrue(true);
-        }
+        assertFalse(Task2.isRightMuve(' ',' ', ' ', ' '));
+    }
+
+    @Test
+    void moveHorseWithExceptionsBecauseOnePointIsEmpty() {
+        assertThrows(StringIndexOutOfBoundsException.class, () -> Task2.run("b2-2"));
+        //assertThrows(StringIndexOutOfBoundsException.class, () -> Task2.run("test"));
     }
 
     @Test
