@@ -2,14 +2,15 @@ package ua.abdulaiev.hw12;
 
 public class Task3 {
     public static void main(String[] args) {
+        Task3 object = new Task3();
         try {
-            throwException(-1);
+            object.throwThreeException(-1);
         } catch (OneException | TwoException | ThreeException exception) {
             exception.printStackTrace();
         }
     }
 
-    static void throwException(int number) throws OneException, TwoException, ThreeException {
+    public static void throwThreeException(int number) throws OneException, TwoException, ThreeException {
         if (number == 0) {
             throw new OneException("Число равно нулю");
         }
