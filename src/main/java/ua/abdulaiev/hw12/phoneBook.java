@@ -1,6 +1,5 @@
 package ua.abdulaiev.hw12;
 
-import java.util.Arrays;
 import java.util.Optional;
 
 public class phoneBook {
@@ -10,8 +9,8 @@ public class phoneBook {
         phoneBook[0] = "016/161616";
         phoneBook[1] = "016/161617";
         phoneBook[2] = "016/161618";
-        System.out.println("Index of number 016/161617 = " +
-                findIndexByPhoneNumber(phoneBook, "016/161617"));
+        System.out.println("Index of number 016/161617 = "
+                + findIndexByPhoneNumber(phoneBook, "016/161617"));
         System.out.println("Search with null " + findIndexByPhoneNumber(phoneBook, null));
     }
 
