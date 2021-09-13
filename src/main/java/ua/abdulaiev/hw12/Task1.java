@@ -6,7 +6,7 @@ public class Task1 {
         try {
             throw exception;
         } catch (Exception e) {
-            System.out.println(exception);
+            exception.getMessage();
         } finally {
             System.out.println("Block finally!");
         }

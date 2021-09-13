@@ -2,9 +2,8 @@ package ua.abdulaiev.hw12;
 
 public class Task3 {
     public static void main(String[] args) {
-        Task3 object = new Task3();
         try {
-            object.throwThreeException(-1);
+            throwThreeException(-1);
         } catch (OneException | TwoException | ThreeException exception) {
             exception.printStackTrace();
         }
