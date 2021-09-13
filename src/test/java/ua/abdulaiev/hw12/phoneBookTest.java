@@ -21,13 +21,6 @@ class phoneBookTest {
     }
 
     @Test
-    void findIndexByPhoneNumberWithUsingGet() {
-        assertThrows(NoSuchElementException.class, () -> findIndexByPhoneNumber(phoneBook, "notInnerNumber").get());
-        assertThrows(NoSuchElementException.class, () -> findIndexByPhoneNumber(phoneBook, "016/161615").get());
-        assertThrows(NoSuchElementException.class, () -> findIndexByPhoneNumber(phoneBook, "123456789").get());
-    }
-
-    @Test
     void findIndexByPhoneNumberTrue() {
         assertEquals(Optional.of(0), findIndexByPhoneNumber(phoneBook, "016/161616"));
         assertEquals(Optional.of(1), findIndexByPhoneNumber(phoneBook, "016/161617"));
