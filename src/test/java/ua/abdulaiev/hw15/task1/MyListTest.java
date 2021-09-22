@@ -31,8 +31,7 @@ class MyListTest {
     }
 
     @Test
-    void exceptionTest() {
-        Assert.assertThrows(NullPointerException.class, ()-> list.getFromLast("213"));
-        Assert.assertThrows(NullPointerException.class, ()-> list.getFromLast(null));
+    void getFromLast_NotExistedValue() {
+        Assertions.assertNull(list.getFromLast("13"));
     }
 }

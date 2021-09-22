@@ -4,6 +4,7 @@ public class MyList<E> {
 
     private MyNode<E> head;
     private MyNode<E> tail;
+    private int length = 0;
 
     public void add(E value) {
         MyNode<E> nodes = new MyNode<>(value);
@@ -23,6 +24,7 @@ public class MyList<E> {
             }
         }
         tail = nodes;
+        length++;
     }
 
     public E getFromLast(E value) {
@@ -32,28 +34,13 @@ public class MyList<E> {
         if (tail == head) {
             return tail.value;
         }
-
         MyNode<E> prevElem = tail;
-        if (prevElem.value.equals(value)) {
-            return prevElem.value;
-        } else {
-            while (prevElem.value != null) {
-                if (prevElem.value.equals(value)) {
-                    return prevElem.value;
-                }
-                prevElem = prevElem.prev;
+        for (int i = 0; i < length; i++) {
+            if (prevElem.value.equals(value)) {
+                return prevElem.value;
             }
+            prevElem = prevElem.prev;
         }
         return null;
-    }
-}
-
-class MyNode<E> {
-    protected E value;
-    protected MyNode<E> next;
-    protected MyNode<E> prev;
-
-    public MyNode(E value) {
-        this.value = value;
     }
 }
