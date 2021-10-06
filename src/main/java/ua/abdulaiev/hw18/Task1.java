@@ -3,7 +3,7 @@ package ua.abdulaiev.hw18;
 import java.io.IOException;
 
 public class Task1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Box boxJson = new Box();
         ServiceBoxJson.fillFromJSON(boxJson);
         System.out.println(boxJson + System.lineSeparator());

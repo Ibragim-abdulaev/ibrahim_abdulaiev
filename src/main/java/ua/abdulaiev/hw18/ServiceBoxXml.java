@@ -9,36 +9,22 @@ import java.util.List;
 public class ServiceBoxXml {
 
     static void fillFromJSON(Box box) {
-        FileInputStream fileInputStream = null;
-        try {
-            ClassLoader classLoader = ServiceBoxJson.class.getClassLoader();
-
-            File configFile = new File(classLoader.getResource("Task18_Box.xml").getFile());
-
-            fileInputStream = new FileInputStream(configFile);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(fileInputStream));
-            while ((reader.readLine()) != null) {
-                fillFromXmlFile(box, configFile);
-            }
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (fileInputStream != null) {
-                    fileInputStream.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        InputStream input = classLoader.getResourceAsStream("Task18_Box.xml");
+        BufferedReader reader = null;
+        if (input != null) {
+            reader = new BufferedReader(new InputStreamReader(input));
+        }
+        if (reader != null) {
+            fillFromXmlFile(box, reader);
         }
     }
 
-    static void fillFromXmlFile(Box box, File file) {
+    static void fillFromXmlFile(Box box, BufferedReader file) {
         List<String[]> list = new ArrayList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+        try {
             String str;
-            while ((str = reader.readLine()) != null)
+            while ((str = file.readLine()) != null)
                 list.add(str.replaceAll("[<>/\"=]", " ").trim().split(" +"));
         } catch (
                 IOException e) {
