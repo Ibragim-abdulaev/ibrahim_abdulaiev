@@ -63,13 +63,13 @@ public class ShopService {
 
         try {
             if (params.get(0).equals("Telephone")) {
-                if (params.size() < 7) {
+                if (params.size() < 7 || params.stream().anyMatch(String::isEmpty)) {
                     throw new InvalidCSVException("Invalid CSV string at: " + csvString);
                 }
 
                 product = new Telephone(params.get(1), params.get(4), params.get(5), Double.parseDouble(params.get(6)));
             } else if (params.get(0).equals("Television")) {
-                if (params.size() < 7) {
+                if (params.size() < 7|| params.stream().anyMatch(String::isEmpty)) {
                     throw new InvalidCSVException("Invalid CSV string at: " + csvString);
                 }
 

@@ -1,21 +1,21 @@
 type,series,model,diagonal,screen type,country,price
-Telephone,Galaxy M32,Samsung,none,Super AMOLED,none,6799
-Telephone,iPhone 11,Apple,none,IPS,none,18499
-Telephone,G20,Nokia,none,IPS,none,4499
-Telephone,Redmi 9T,Xiaomi,none,IPS,none,4999
-Telephone,Redmi 9A,Xiaomi,none,IPS,none,2999
-Telephone,iPhone 12 Pro Max,Apple,none,OLED (Super Retina XDR),none,38499
-Telephone,Nord,OnePlus,none,Fluid AMOLED,none,13999
-Telephone,Reno5 Lite,OPPO,none,AMOLED,none,9999
-Telephone,E7i Power,Motorola,none,IPS,none,2999
-Telephone,P Smart 2021,Huawei,none,IPS,none,5499
-Television,UE43T5300AUXUA,none,43,LED,Hungary,11699
-Television,OLED55C14LB,none,55,OLED,Poland,49999
-Television,32LM6370PLA,none,32,LED,Poland,9599
-Television,43U710KB,none,43,LED,China,10999
-Television,43UP77006LB,none,43,LED,Poland,14399
-Television,,none,32,LED,China,4899
-Television,43HAK5750,none,43,LED,Turkey,9999
-Television,L32M5-5ARU,none,32,LED,China,6999
-Television,43PUS7505/12,none,43,LED,Poland,1699
-Television,24H9100T,none,24,LED,China,3699
+Telephone,Redmi 1,Xiaomi,none,IPS,none,5555
+Telephone,Redmi 1,Xiaomi,none,IPS,none,5555
+Telephone,Redmi 1,Xiaomi,none,IPS,none,5555
+Telephone,Nord,OnePlus,none,IPS,none,6555
+Telephone,iPhone 12 Pro Max,Apple,none,IPS,none,54444
+Telephone,Reno5 Lite,OPPO,none,IPS,none,4242
+Telephone,,Samsung,none,IPS,none,3333
+Telephone,Galaxy 3,Samsung,none,IPS,none,4322
+Telephone,E3,Motorola,none,IPS,none,8667
+Telephone,P Smart 2021,Huawei,none,IPS,none,3134
+Television,U,none,43,LED,Hungary,50431
+Television,hda2,none,55,OLED,Poland,3845
+Television,hda2,none,55,OLED,Poland,3845
+Television,,none,32,LED,Poland,8543
+Television,3123HDA43,none,43,LED,Turkey,4884
+Television,645OL3d,none,32,LED,China,1234
+Television,DSA23,none,43,LED,Turkey,9823
+Television,H91T,none,24,LED,China,4325
+Television,ADA,none,43,LED,Hungary,65493
+Television,5325HD,none,43,LED,Poland,54385

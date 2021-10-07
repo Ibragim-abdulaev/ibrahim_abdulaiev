@@ -1,2 +1,21 @@
-Telephone; series; screenType; 10.5; someModel
-Telephone; ; screenType; 19; Kharkiv
+type,series,model,diagonal,screen type,country,price
+Telephone,Redmi 1,Xiaomi,none,IPS,none,5555
+Telephone,Redmi 1,Xiaomi,none,IPS,none,5555
+Telephone,Redmi 1,Xiaomi,none,IPS,none,5555
+Telephone,Nord,OnePlus,none,IPS,none,6555
+Telephone,iPhone 12 Pro Max,Apple,none,IPS,none,54444
+Telephone,Reno5 Lite,OPPO,none,IPS,none,4242
+Telephone,,Samsung,none,IPS,none,3333
+Telephone,Galaxy 3,Samsung,none,IPS,none,4322
+Telephone,E3,Motorola,none,IPS,none,8667
+Telephone,P Smart 2021,Huawei,none,IPS,none,3134
+Television,U,none,43,LED,Hungary,50431
+Television,hda2,none,55,OLED,Poland,3845
+Television,hda2,none,55,OLED,Poland,3845
+Television,,none,32,LED,Poland,8543
+Television,3123HDA43,none,43,LED,Turkey,4884
+Television,645OL3d,none,32,LED,China,1234
+Television,DSA23,none,43,LED,Turkey,9823
+Television,H91T,none,24,LED,China,4325
+Television,ADA,none,43,LED,Hungary,65493
+Television,5325HD,none,43,LED,Poland,54385
