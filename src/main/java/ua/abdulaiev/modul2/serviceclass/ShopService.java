@@ -29,7 +29,7 @@ public class ShopService {
     }
 
     public void readOrders(String filePath) {
-        try (Stream<String> stream = Files.lines(Paths.get(filePath))) {
+        try (Stream<String> stream = Files.lines(Paths.get(filePath)).skip(1)) {
             Invoice invoice = new Invoice(personService.generateCustomer(), "", new ArrayList<>());
 
             stream.forEach(line -> {
@@ -55,25 +55,25 @@ public class ShopService {
     }
 
     private Product parseFromCSV(String csvString) throws InvalidCSVException {
-        List<String> params = Arrays.stream(csvString
-                .replaceAll("\\s", "")
-                .split(","))
+        List<String> params = Arrays
+                .stream(csvString
+                        .split(","))
                 .collect(Collectors.toList());
         Product product = null;
 
         try {
             if (params.get(0).equals("Telephone")) {
-                if (params.size() < 4 || params.stream().anyMatch(String::isEmpty)) {
+                if (params.size() < 7) {
                     throw new InvalidCSVException("Invalid CSV string at: " + csvString);
                 }
 
-                product = new Telephone(params.get(1), params.get(2), Double.parseDouble(params.get(3)), params.get(4));
+                product = new Telephone(params.get(1), params.get(4), params.get(5), Double.parseDouble(params.get(6)));
             } else if (params.get(0).equals("Television")) {
-                if (params.size() < 6 || params.stream().anyMatch(String::isEmpty)) {
+                if (params.size() < 7) {
                     throw new InvalidCSVException("Invalid CSV string at: " + csvString);
                 }
 
-                product = new Television(params.get(1), params.get(2), Double.parseDouble(params.get(3)), Double.parseDouble(params.get(4)), params.get(5));
+                product = new Television(params.get(1), Double.parseDouble(params.get(3)), params.get(4), params.get(5), Double.parseDouble(params.get(6)));
             }
         } catch (Exception e) {
             e.printStackTrace();

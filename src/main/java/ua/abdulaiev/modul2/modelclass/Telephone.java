@@ -3,7 +3,7 @@ package ua.abdulaiev.modul2.modelclass;
 public class Telephone extends Product {
     private String model;
 
-    public Telephone(String series, String screenType, double price, String model) {
+    public Telephone(String series, String model, String screenType, double price) {
         super(series, screenType, price);
 
         this.model = model;
