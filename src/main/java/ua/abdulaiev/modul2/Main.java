@@ -16,8 +16,6 @@ public class Main {
 
     public static void main(String[] args) {
         shopService.readOrders("src\\main\\resources\\Orders1.csv");
-        shopService.readOrders("src\\main\\resources\\Orders2.csv");
-        shopService.readOrders("src\\main\\resources\\Orders3.csv");
 
         prinSoldTelephone();
         printSoldTelevision();

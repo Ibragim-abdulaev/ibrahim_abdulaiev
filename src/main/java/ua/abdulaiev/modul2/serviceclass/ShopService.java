@@ -57,7 +57,7 @@ public class ShopService {
     private Product parseFromCSV(String csvString) throws InvalidCSVException {
         List<String> params = Arrays.stream(csvString
                 .replaceAll("\\s", "")
-                .split(";"))
+                .split(","))
                 .collect(Collectors.toList());
         Product product = null;
 
