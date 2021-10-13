@@ -1,8 +1,8 @@
 package ua.abdulaiev.hw18;
 
 public class MaxLiftingCapacity {
-    private String unit;
-    private int value;
+    protected String unit;
+    protected int value;
 
     public MaxLiftingCapacity(String unit, int value) {
         this.unit = unit;
