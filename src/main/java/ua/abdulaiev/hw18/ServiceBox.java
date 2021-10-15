@@ -2,6 +2,8 @@ package ua.abdulaiev.hw18;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.regex.Pattern;
@@ -49,5 +51,30 @@ public class ServiceBox {
             }
             return box;
         };
+    }
+    public static List<Pattern> getJsonPattern() {
+        List<Pattern> patterns = new ArrayList<>();
+        patterns.add(Pattern.compile("(from)\": \"(.+?)\""));
+        patterns.add(Pattern.compile("(material)\": \"(.+?)\""));
+        patterns.add(Pattern.compile("(color)\": \"(.+?)\""));
+        patterns.add(Pattern.compile("(unit)\": \"(.+?)\""));
+        patterns.add(Pattern.compile("(value)\": (\\d+)"));
+        patterns.add(Pattern.compile("(name)\": \"(.+?)\""));
+        patterns.add(Pattern.compile("(class)\": \"(.+?)\""));
+        patterns.add(Pattern.compile("(delivery-date)\": \"(.+?)\""));
+        return patterns;
+    }
+
+    public static List<Pattern> getXmlPattern() {
+        List<Pattern> patterns = new ArrayList<>();
+        patterns.add(Pattern.compile("(from)=\"(.+?)\""));
+        patterns.add(Pattern.compile("(material)=\"(.+?)\""));
+        patterns.add(Pattern.compile("<(color)>(.+?)<"));
+        patterns.add(Pattern.compile("(unit)=\"(.+?)\""));
+        patterns.add(Pattern.compile("(max-lifting-capacity).*?(\\d+).*<"));
+        patterns.add(Pattern.compile("<(name)>(.+?)<"));
+        patterns.add(Pattern.compile("<(class)>(.+?)<"));
+        patterns.add(Pattern.compile("<(delivery-date)>(.+?)<"));
+        return patterns;
     }
 }
