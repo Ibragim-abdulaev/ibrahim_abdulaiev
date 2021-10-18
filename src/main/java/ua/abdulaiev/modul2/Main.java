@@ -14,10 +14,10 @@ public class Main {
 
     public static void main(String[] args) {
         shopService.readOrders("Orders1.csv");
-        shopService.readOrders("Orders2.csv");
-        shopService.readOrders("Orders3.csv");
+        //shopService.readOrders("Orders2.csv");
+        //shopService.readOrders("Orders3.csv");
 
-        prinSoldTelephone();
+        printSoldTelephone();
         printSoldTelevision();
         printSmallestOrders();
         printAllSum();
@@ -28,7 +28,7 @@ public class Main {
         printSortOrders();
     }
 
-    public static void prinSoldTelephone() {
+    public static void printSoldTelephone() {
         System.out.print("Sold Telephone: ");
         System.out.println(shopService
                 .getOrders()
