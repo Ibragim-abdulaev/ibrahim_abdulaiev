@@ -10,7 +10,7 @@ public class Invoice {
     private List<Product> products;
     private Customer customer;
     private String type;
-    private Date created;
+    private LocalDateTime created;
 
     public Invoice() {
     }
@@ -39,11 +39,11 @@ public class Invoice {
         this.type = type;
     }
 
-    public Date getCreated() {
+    public LocalDateTime getCreated() {
         return created;
     }
 
-    public void setCreated(Date created) {
+    public void setCreated(LocalDateTime created) {
         this.created = created;
     }
 

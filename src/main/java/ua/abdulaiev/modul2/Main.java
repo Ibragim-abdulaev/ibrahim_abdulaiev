@@ -13,7 +13,7 @@ public class Main {
     static ShopService shopService = new ShopService(PRICE_LIMIT, "src\\main\\resources\\OrdersLogs.log");
 
     public static void main(String[] args) {
-        shopService.readOrders("Orders1.csv");
+        shopService.readFilesAndCreateInvoices("Orders1.csv");
         //shopService.readOrders("Orders2.csv");
         //shopService.readOrders("Orders3.csv");
 
@@ -103,7 +103,7 @@ public class Main {
             List<Invoice> collect = shopService
                     .getOrders()
                     .stream()
-                    .sorted(Comparator.comparing((Invoice invoice) -> invoice.getCreated().getTime()))
+                    .sorted(Comparator.comparing(Invoice::getCreated))
                     .limit(3)
                     .collect(Collectors.toList());
             System.out.println(collect);

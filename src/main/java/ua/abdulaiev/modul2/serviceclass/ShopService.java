@@ -32,7 +32,7 @@ public class ShopService {
         this.logFilePath = logFilePath;
     }
 
-    public void readOrders(String filePath) {
+    public void readFilesAndCreateInvoices(String filePath) {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         InputStream input = classLoader.getResourceAsStream(filePath);
         BufferedReader reader = new BufferedReader(new InputStreamReader(input));
@@ -63,7 +63,7 @@ public class ShopService {
                 } else {
                     invoice.setType("retail");
                 }
-                invoice.setCreated(new Date());
+                invoice.setCreated(LocalDateTime.now());
                 orders.add(invoice);
                 log(invoice.toString());
             }
