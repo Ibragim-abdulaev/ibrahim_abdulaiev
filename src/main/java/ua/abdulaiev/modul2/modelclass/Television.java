@@ -5,7 +5,7 @@ public class Television extends Product {
     private String country;
 
     public Television(String series, double diagonal, String screenType, String country, double price) {
-        super(series, screenType, price);
+        super(series, screenType, price, Type.TV);
 
         this.diagonal = diagonal;
         this.country = country;

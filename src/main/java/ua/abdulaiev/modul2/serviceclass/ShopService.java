@@ -2,16 +2,20 @@ package ua.abdulaiev.modul2.serviceclass;
 
 import ua.abdulaiev.modul2.modelclass.*;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -29,26 +33,40 @@ public class ShopService {
     }
 
     public void readOrders(String filePath) {
-        try (Stream<String> stream = Files.lines(Paths.get(filePath)).skip(1)) {
-            Invoice invoice = new Invoice(personService.generateCustomer(), "", new ArrayList<>());
-
-            stream.forEach(line -> {
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        InputStream input = classLoader.getResourceAsStream(filePath);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+        List<Product> products = new ArrayList<>();
+        try {
+            String str;
+            reader.readLine();
+            while ((str = reader.readLine()) != null) {
                 try {
-                    invoice.getProducts().add(parseFromCSV(line));
+                    products.add(parseFromCSV(str));
                 } catch (InvalidCSVException e) {
                     e.printStackTrace();
                 }
-            });
-
-            if (invoice.getProducts().stream().mapToDouble(Product::getPrice).sum() > priceLimit) {
-                invoice.setType("wholesale");
-            } else {
-                invoice.setType("retail");
             }
 
-            orders.add(invoice);
+            for (int j = 0; j < 15; j++) {
+                List<Product> products1 = new ArrayList<>();
+                Invoice invoice = new Invoice();
+                invoice.setProducts(products1);
+                invoice.setCustomer(PersonService.generateCustomer());
 
-            log(invoice.toString());
+                for (int i = 0; i <= ThreadLocalRandom.current().nextInt(1, 6); i++) {
+                    products1.add(products.get(ThreadLocalRandom.current().nextInt(products.size())));
+                }
+
+                if (invoice.getProducts().stream().mapToDouble(Product::getPrice).sum() > priceLimit) {
+                    invoice.setType("wholesale");
+                } else {
+                    invoice.setType("retail");
+                }
+                invoice.setCreated(new Date());
+                orders.add(invoice);
+                log(invoice.toString());
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -69,7 +87,7 @@ public class ShopService {
 
                 product = new Telephone(params.get(1), params.get(4), params.get(5), Double.parseDouble(params.get(6)));
             } else if (params.get(0).equals("Television")) {
-                if (params.size() < 7|| params.stream().anyMatch(String::isEmpty)) {
+                if (params.size() < 7 || params.stream().anyMatch(String::isEmpty)) {
                     throw new InvalidCSVException("Invalid CSV string at: " + csvString);
                 }
 
@@ -108,3 +126,4 @@ public class ShopService {
         }
     }
 }
+

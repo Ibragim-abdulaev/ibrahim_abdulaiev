@@ -4,11 +4,13 @@ public class Product {
     protected String series;
     protected String screenType;
     protected double price;
+    protected Type type;
 
-    public Product(String series, String screenType, double price) {
+    public Product(String series, String screenType, double price, Type type) {
         this.series = series;
         this.screenType = screenType;
         this.price = price;
+        this.type = type;
     }
 
     public String getSeries() {
@@ -33,6 +35,14 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
     }
 
     @Override

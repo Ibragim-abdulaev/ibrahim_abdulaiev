@@ -4,7 +4,7 @@ public class Telephone extends Product {
     private String model;
 
     public Telephone(String series, String model, String screenType, double price) {
-        super(series, screenType, price);
+        super(series, screenType, price, Type.PHONE);
 
         this.model = model;
     }

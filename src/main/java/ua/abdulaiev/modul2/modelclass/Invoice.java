@@ -1,16 +1,18 @@
 package ua.abdulaiev.modul2.modelclass;
 
+import javax.xml.crypto.Data;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 public class Invoice {
     private List<Product> products;
     private Customer customer;
     private String type;
+    private Date created;
 
-    public Invoice(Customer customer, String type, List<Product> products) {
-        this.customer = customer;
-        this.type = type;
-        this.products = products;
+    public Invoice() {
     }
 
     public List<Product> getProducts() {
@@ -35,6 +37,14 @@ public class Invoice {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
     }
 
     @Override
