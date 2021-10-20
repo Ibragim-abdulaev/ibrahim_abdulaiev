@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class ServiceBox {
-    public static Map<String, Object> search() {
+    public static Map<String, Object> searchClasses() {
         Reflections reflections = new Reflections(Task.class.getPackage().getName());
         Set<Class<?>> classSet = reflections.getTypesAnnotatedWith(AutoCreate.class);
         Map<String, Object> map = new HashMap<>();

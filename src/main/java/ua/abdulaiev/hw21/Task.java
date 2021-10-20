@@ -13,7 +13,7 @@ import static java.util.Arrays.stream;
 
 public class Task {
     public static void main(String[] args) {
-        Map<String, Object> map = ServiceBox.search();
+        Map<String, Object> map = ServiceBox.searchClasses();
         for (Object o : map.values()) {
             accept(o);
         }
