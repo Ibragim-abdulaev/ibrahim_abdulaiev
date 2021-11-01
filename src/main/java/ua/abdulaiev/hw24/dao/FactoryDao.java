@@ -54,7 +54,7 @@ public class FactoryDao {
         Transaction transaction = null;
         try (Session session = HibernateUtils.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            session.saveOrUpdate(factory);
+            session.update(factory);
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {

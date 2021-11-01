@@ -40,7 +40,7 @@ public class DeviceDao {
         Transaction transaction = null;
         try (Session session = HibernateUtils.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            session.saveOrUpdate(device);
+            session.update(device);
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
