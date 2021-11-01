@@ -10,8 +10,8 @@ import java.time.LocalDate;
 public class Task {
     private static final VehicleDao VEHICLE_DAO = new VehicleDao();
     public static void main(String[] args) {
-        Owner owner = new Owner("Owner");
-        Owner owner1 = new Owner("Owner1");
+        Owner owner = new Owner("Owner", "hello@gmail.com");
+        Owner owner1 = new Owner("Owner1", "world@gmail.com");
         Vehicle vehicle = new Vehicle("Vehicle", owner, LocalDate.of(2021, 8, 1),
                 100, TyresType.SUMMER, LocalDate.now());
         vehicle.setOwner(owner);

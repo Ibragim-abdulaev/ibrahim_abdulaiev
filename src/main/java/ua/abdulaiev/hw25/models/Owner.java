@@ -24,7 +24,11 @@ public class Owner {
     @Column(name = "name")
     private String name;
 
-    public Owner(String name) {
+    @Column(name = "email")
+    private String email;
+
+    public Owner(String name, String email) {
         this.name = name;
+        this.email = email;
     }
 }
