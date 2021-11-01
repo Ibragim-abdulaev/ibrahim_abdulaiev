@@ -10,7 +10,7 @@ import java.util.List;
 
 @Data
 public class ConnectionRepository {
-    private final static String URL = "jdbc:postgresql://localhost:5432/Homework23";
+    private final static String URL = "jdbc:postgresql://localhost:5432/myDB";
     private final static String PASSWORD = "root";
     private final static String USER = "postgres";
     static Connection connection = null;
