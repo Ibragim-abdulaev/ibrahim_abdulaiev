@@ -40,10 +40,9 @@ public class Vehicle {
     @JoinColumn(name = "id_owner")
     private Owner owner;
 
-    public Vehicle(String name, Owner owner, LocalDate manufactureDate, Integer price,
+    public Vehicle(String name,LocalDate manufactureDate, Integer price,
                    TyresType tyresType, LocalDate serviceDate) {
         this.name = name;
-        this.owner = owner;
         this.manufactureDate = manufactureDate;
         this.price = price;
         this.tyresType = tyresType;

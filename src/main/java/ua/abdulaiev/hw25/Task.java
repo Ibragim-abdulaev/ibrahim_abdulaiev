@@ -12,10 +12,10 @@ public class Task {
     public static void main(String[] args) {
         Owner owner = new Owner("Owner", "hello@gmail.com");
         Owner owner1 = new Owner("Owner1", "world@gmail.com");
-        Vehicle vehicle = new Vehicle("Vehicle", owner, LocalDate.of(2021, 8, 1),
+        Vehicle vehicle = new Vehicle("Vehicle", LocalDate.of(2021, 8, 1),
                 100, TyresType.SUMMER, LocalDate.now());
         vehicle.setOwner(owner);
-        Vehicle vehicle1 = new Vehicle("Vehicle1", owner1, LocalDate.of(2020, 12, 2),
+        Vehicle vehicle1 = new Vehicle("Vehicle1", LocalDate.of(2020, 12, 2),
                 500, TyresType.WINTER, LocalDate.now());
         vehicle1.setOwner(owner1);
         VEHICLE_DAO.saveVehicle(vehicle);
