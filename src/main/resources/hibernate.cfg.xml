@@ -11,8 +11,16 @@
         <property name="hibernate.hbm2ddl.auto">create-drop</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL95Dialect</property>
         <property name="show_sql">false</property>
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
 
         <mapping class="ua.abdulaiev.hw25.models.Owner"/>
         <mapping class="ua.abdulaiev.hw25.models.Vehicle"/>
+
+        <mapping class="ua.abdulaiev.hw26.models.Album"/>
+        <mapping class="ua.abdulaiev.hw26.models.Artist"/>
+        <mapping class="ua.abdulaiev.hw26.models.BuyingAlbum"/>
+        <mapping class="ua.abdulaiev.hw26.models.Customer"/>
+        <mapping class="ua.abdulaiev.hw26.models.Orders"/>
+
     </session-factory>
 </hibernate-configuration>
