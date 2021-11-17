@@ -1,0 +1,22 @@
+echo "Enter Two numbers: "
+read -r a
+read -r b
+
+echo "Enter Choice :"
+echo "1. Add"
+echo "2. Sub"
+echo "3. Multi"
+echo "4. Divide"
+read -r choice
+
+export TERM=xterm-256color
+clear
+
+case $choice in
+  1)result=$(($a+$b));;
+  2)result=$(($a-$b));;
+  3)result=$(($a*$b));;
+  4)result=$(($a/$b));;
+esac
+
+echo "Result = $result"
