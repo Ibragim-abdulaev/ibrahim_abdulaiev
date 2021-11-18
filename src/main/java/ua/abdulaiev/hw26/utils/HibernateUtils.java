@@ -4,8 +4,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.reflections.Reflections;
-import ua.abdulaiev.hw24.models.Device;
-import ua.abdulaiev.hw24.models.Factory;
 import ua.abdulaiev.hw26.models.*;
 
 import javax.persistence.Entity;

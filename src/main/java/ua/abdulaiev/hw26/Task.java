@@ -22,7 +22,7 @@ public class Task {
     public static void main(String[] args) {
         List<Order> orderList = new ArrayList<>();
         saveRandom(15);
-        for (int i = 1; i <= 7; i++) {
+        for (int i = 1; i <= 5; i++) {
             Customer customer = new Customer("Customer" + i);
             CUSTOMER_DAO.saveCustomer(customer);
             orderList.add(CUSTOMER_DAO.buyRandomAlbum(customer));
