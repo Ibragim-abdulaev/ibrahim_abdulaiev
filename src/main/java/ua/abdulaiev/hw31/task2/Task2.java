@@ -2,6 +2,7 @@ package ua.abdulaiev.hw31.task2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Task2 {
     public static void main(String[] args) throws InterruptedException {
@@ -19,8 +20,9 @@ public class Task2 {
     }
 
     private static void fillNumber(List<Integer> numbers) {
-        for (int i = 1; i < 5000_000; i++) {
-            numbers.add(i);
+        Random random = new Random();
+        for (int i = 1; i < 1000_000; i++) {
+            numbers.add(random.nextInt());
         }
     }
 }
