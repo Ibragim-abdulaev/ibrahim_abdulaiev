@@ -14,7 +14,7 @@ import static java.lang.Thread.currentThread;
 class HorseThread extends Thread {
     private volatile int place;
     private final int number;
-    private static int horsePlace;
+    protected static int horsePlace;
 
     public HorseThread (int number) {
         this.number = number;

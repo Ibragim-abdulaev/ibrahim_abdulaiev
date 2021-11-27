@@ -10,8 +10,8 @@ import static java.lang.Integer.*;
 public class Task02 {
     public static void main(String[] args) throws InterruptedException {
         List<HorseThread> listHorse = new ArrayList<>();
-        int countHorse;
-        int youHorse;
+        int countHorse = 0;
+        int yourHorse = 0;
         do {
             System.out.println("Write negative number for exit");
             try {
@@ -22,10 +22,10 @@ public class Task02 {
                     break;
                 }
                 System.out.print("Select horse number for bets: ");
-                youHorse = parseInt(new Scanner(System.in).next());
+                yourHorse = parseInt(new Scanner(System.in).next());
                 System.out.print(System.lineSeparator());
-                if (youHorse >= 1) {
-                    if (youHorse > countHorse) {
+                if (yourHorse >= 1) {
+                    if (yourHorse > countHorse) {
                         System.out.println("Error! The selected horse does not exist" + System.lineSeparator());
                         continue;
                     }
@@ -36,11 +36,13 @@ public class Task02 {
                 e.printStackTrace();
                 continue;
             }
-            runHorse(listHorse, youHorse, countHorse);
+            runHorse(listHorse, yourHorse, countHorse);
+            listHorse.clear();
+            HorseThread.horsePlace = 0;
         } while (true);
     }
 
-    public static void runHorse(List<HorseThread> listHorse, int youHorse, int countHorse) throws InterruptedException {
+    public static void runHorse(List<HorseThread> listHorse, int yourHorse, int countHorse) throws InterruptedException {
         System.out.println("Start of the race...");
         int i = 1;
         while (i <= countHorse) {
@@ -49,8 +51,10 @@ public class Task02 {
             horse.start();
             i++;
         }
-        listHorse.get(youHorse - 1).join();
-        int place = listHorse.get(youHorse - 1).getPlace();
+        for (HorseThread horseThread : listHorse) {
+            horseThread.join();
+        }
+        int place = listHorse.get(yourHorse - 1).getPlace();
         System.out.println("Your horse took " + place +" place" + System.lineSeparator());
     }
 }
