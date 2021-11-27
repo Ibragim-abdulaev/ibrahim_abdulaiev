@@ -1,6 +1,7 @@
 package ua.abdulaiev.hw32.task2;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.IntStream;
@@ -51,8 +52,12 @@ public class Task02 {
             horse.start();
             i++;
         }
-        for (HorseThread horseThread : listHorse) {
-            horseThread.join();
+        Iterator<HorseThread> iterator = listHorse.iterator();
+        if (iterator.hasNext()) {
+            do {
+                HorseThread horseThread = iterator.next();
+                horseThread.join();
+            } while (iterator.hasNext());
         }
         int place = listHorse.get(yourHorse - 1).getPlace();
         System.out.println("Your horse took " + place +" place" + System.lineSeparator());
